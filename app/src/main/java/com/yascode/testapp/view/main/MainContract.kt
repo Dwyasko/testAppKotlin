@@ -1,4 +1,4 @@
-package com.yascode.testapp.main
+package com.yascode.testapp.view.main
 
 import com.yascode.testapp.data.local.Content
 
@@ -11,6 +11,8 @@ interface MainContract {
 
         fun showLoader()
         fun hideLoader()
+        fun showEmptyView()
+        fun hideEmptyView()
         fun refreshList(contents: ArrayList<Content>)
 
     }

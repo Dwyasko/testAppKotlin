@@ -1,4 +1,4 @@
-package com.yascode.testapp.utils.di
+package com.yascode.testapp.di
 
 import com.yascode.testapp.data.remote.ApiInterface
 import com.yascode.testapp.data.remote.ImageApi

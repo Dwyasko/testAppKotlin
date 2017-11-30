@@ -9,4 +9,8 @@
 
     <string name="menu_add_string">Add Content</string>
     <string name="menu_refresh_string">Refresh</string>
+    <string name="empty_string">Share your first moment here…</string>
+    <string name="hint_summary">Summary…</string>
+    <string name="hint_desc">Description…</string>
+    <string name="capt_submit">Submit</string>
 </resources>

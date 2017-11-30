@@ -1,4 +1,4 @@
-package com.yascode.testapp.login
+package com.yascode.testapp.view.login
 
 import android.content.Context
 import com.yascode.testapp.MyApp
@@ -11,19 +11,17 @@ import javax.inject.Inject
 class LoginPresenter(context: Context) : LoginContract.presenter {
 
     @Inject lateinit var contentManager: ContentManager
+
     var loginView: LoginContract.view
 
     override suspend fun postLogin(username: String, password: String): String {
-        loginView.showLoader()
         val result = contentManager.postLogin(username, password)
-
-        loginView.hideLoader()
         return result;
     }
 
     init {
-        MyApp.appComponent.inject(context as LoginActivity)
-        loginView = context;
+        MyApp.appComponent.inject(this)
+        loginView = context as LoginContract.view;
     }
 
 }

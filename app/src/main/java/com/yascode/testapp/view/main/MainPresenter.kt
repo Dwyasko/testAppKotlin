@@ -1,10 +1,13 @@
-package com.yascode.testapp.main
+package com.yascode.testapp.view.main
 
 import android.content.Context
 import android.widget.ImageView
 import com.yascode.testapp.MyApp
 import com.yascode.testapp.data.local.Content
 import com.yascode.testapp.data.remote.ContentManager
+import com.yascode.testapp.utils.AppSharedPreferences
+import com.yascode.testapp.utils.Constant
+import javax.inject.Inject
 
 /**
  * Created by caksono21 on 29/11/17.
@@ -12,24 +15,16 @@ import com.yascode.testapp.data.remote.ContentManager
 class MainPresenter internal constructor(context: Context) : MainContract.presenter {
 
     var mView: MainContract.view
-    lateinit var contentManager: ContentManager
+    @Inject lateinit var contentManager: ContentManager
+    @Inject lateinit var sharedPreferences: AppSharedPreferences
 
     init {
-        MyApp.appComponent.inject(context as MainActivity)
-        mView = context
+        MyApp.appComponent.inject(this)
+        mView = context as MainContract.view
     }
 
     override suspend fun loadList(): List<Content> {
-        mView.showLoader()
-
-        val result = contentManager.getListImage()
-
-        mView.hideLoader()
+        val result = contentManager.getListImage(sharedPreferences.getToken(Constant.KEY_TOKEN))
         return result
     }
-
-    fun ImageView.loadUrl() {
-
-    }
-
 }

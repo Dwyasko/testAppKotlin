@@ -24,9 +24,9 @@
         android:id="@+id/email_login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
         android:layout_marginBottom="108dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -45,7 +45,6 @@
             android:inputType="textAutoComplete"
             android:maxLines="1"
             android:paddingBottom="15dp"
-            android:textColor="@color/whiteDark"
             android:textColorHint="@color/gray_dark"
             app:backgroundTint="@color/gray_dark" />
 
@@ -62,7 +61,6 @@
             android:inputType="textPassword"
             android:maxLines="1"
             android:paddingBottom="15dp"
-            android:textColor="@color/whiteDark"
             android:textColorHint="@color/gray_dark"
             app:backgroundTint="@color/gray_dark" />
 

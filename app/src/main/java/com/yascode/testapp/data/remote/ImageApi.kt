@@ -7,12 +7,13 @@ import java.io.File
  * Created by caksono21 on 29/11/17.
  */
 interface ImageApi {
-    fun getListImage(): Call<ContentResponse>
-    fun getImageDetail(id: String)
+    fun getListImage(token: String): Call<List<ContentItem>>
 
-    fun login(username: String, password: String) : Call<String>
+    fun getContent(id: Int, token: String): Call<UploadResponse>
 
-    fun postImage(file: File)
+    fun login(username: String, password: String): Call<AuthResponse>
 
-    fun postDetails(strDesc: String, strSum: String)
+    fun postImage(token: String, filename: File): Call<UploadResponse>
+
+    fun postDetails(token: String, id: Int, detail: Detail): Call<UploadResponse>
 }

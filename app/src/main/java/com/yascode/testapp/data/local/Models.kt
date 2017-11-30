@@ -7,20 +7,26 @@ import android.os.Parcelable
  * Created by caksono21 on 29/11/17.
  */
 data class Content(
-        val imgPath: String,
-        val imgDesc: String,
-        val imgSum: String
+        val id: Int,
+        val summary: String,
+        val detail: String,
+        val thumbnail_url: String,
+        val original_url: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+            parcel.readInt(),
+            parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString()) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(imgPath)
-        parcel.writeString(imgDesc)
-        parcel.writeString(imgSum)
+        parcel.writeInt(id)
+        parcel.writeString(summary)
+        parcel.writeString(detail)
+        parcel.writeString(thumbnail_url)
+        parcel.writeString(original_url)
     }
 
     override fun describeContents(): Int {
@@ -36,6 +42,4 @@ data class Content(
             return arrayOfNulls(size)
         }
     }
-
-
 }

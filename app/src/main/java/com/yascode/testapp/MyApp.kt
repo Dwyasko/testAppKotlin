@@ -1,9 +1,9 @@
 package com.yascode.testapp
 
 import android.app.Application
-import com.yascode.testapp.utils.di.AppComponent
-import com.yascode.testapp.utils.di.AppModule
-import com.yascode.testapp.utils.di.DaggerAppComponent
+import com.yascode.testapp.di.AppComponent
+import com.yascode.testapp.di.AppModule
+import com.yascode.testapp.di.DaggerAppComponent
 
 /**
  * Created by caksono21 on 29/11/17.

@@ -6,11 +6,15 @@ package com.yascode.testapp.data.remote
 class ContentResponse(val data: List<ContentItem>)
 
 class ContentItem(
-        val ImgPath: String,
-        val imgDesc: String,
-        val imgSum: String
+        val id:Int,
+        val summary: String,
+        val thumbnail_url: String
 )
 
-class AuthResponse(val data: Auth)
+class AuthResponse(val access_token: String)
 
-class Auth(val access_token: String)
+class UploadResponse(val id: Int,
+                     val thumbnail_url: String,
+                     val original_url: String,
+                     val summary: String,
+                     val detail: String)

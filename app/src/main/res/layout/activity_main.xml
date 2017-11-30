@@ -4,13 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yascode.testapp.main.MainActivity">
+    tools:context=".view.main.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rec_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="16dp"
-        android:paddingTop="16dp" />
+        android:paddingTop="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/empty_string"
+        android:textSize="22sp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="@android:color/white"
+        app:fabSize="normal"
+        app:useCompatPadding="true" />
 
 </FrameLayout>

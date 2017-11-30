@@ -1,4 +1,4 @@
-package com.yascode.testapp.utils
+package com.yascode.testapp
 
 import android.support.v7.app.AppCompatActivity
 import kotlinx.coroutines.experimental.Job
